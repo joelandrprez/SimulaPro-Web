@@ -1,0 +1,25 @@
+<div class="sidebar-container">
+  <div class="user-info">
+    <mat-icon>account_circle</mat-icon>
+    <div class="user-details">
+      <span class="user-name">Joel Pérez</span>
+      <span class="user-role">Coordinador</span>
+    </div>
+  </div>
+
+  <mat-nav-list class="menu">
+    <a mat-list-item routerLink="/courses/list" routerLinkActive="active" class="sidebar-link">
+      <span class="link-content">
+        <mat-icon>school</mat-icon>
+        <span class="label">Cursos</span>
+      </span>
+    </a>
+  </mat-nav-list>
+
+  <div class="logout">
+    <button mat-button color="warn" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      Cerrar sesión
+    </button>
+  </div>
+</div>

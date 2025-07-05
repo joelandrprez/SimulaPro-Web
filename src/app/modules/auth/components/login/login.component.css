@@ -1,0 +1,109 @@
+:root {
+  --color-primary: #00809D;
+  --color-bg-light: #FCECDD;
+  --color-accent: #FF7601;
+  --color-accent-alt: #F3A26D;
+  --color-white: #ffffff;
+}
+
+.login-page {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.login-form {
+  flex: 1;
+  background-color: var(--color-bg-light);
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form h2 {
+  font-size: 32px;
+  color: var(--color-primary);
+  margin-bottom: 32px;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Estilo del campo */
+mat-form-field {
+  width: 100%;
+}
+
+mat-form-field.mat-form-field {
+  --mdc-outlined-text-field-outline-color: var(--color-primary);
+  --mdc-outlined-text-field-focus-outline-color: var(--color-accent);
+  --mdc-outlined-text-field-hover-outline-color: var(--color-accent-alt);
+}
+
+mat-label {
+  color: var(--color-primary);
+}
+
+mat-error {
+  color: var(--color-accent);
+}
+
+
+/* Enlace */
+.forgot-link {
+  text-align: center;
+  color: var(--color-accent-alt);
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-label {
+  color: var(--color-primary);
+}
+
+mat-icon {
+  color: var(--color-primary);
+}
+
+.login-button {
+  background-color: var(--color-accent);
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.forgot-link {
+  text-align: center;
+  color: var(--color-accent-alt);
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+.login-image {
+  flex: 1;
+  background-image: url('https://www.apple.com/v/education-initiative/b/images/overview/hero_santa_fe__gholm0l4w9im_xlarge.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 60px;
+  left: 40px;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 0px 0px 6px rgba(0,0,0,0.7);
+}

@@ -1,0 +1,11 @@
+.pregunta-card {
+  max-width: 700px;
+  margin: 24px auto;
+  padding: 16px;
+}
+
+.pregunta-texto p {
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+}

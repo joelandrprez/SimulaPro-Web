@@ -1,0 +1,29 @@
+<div class="login-page">
+  <!-- Panel izquierdo: formulario -->
+  <div class="login-form">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email"  placeholder="email"/>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password"  placeholder="password"/>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="login-button" type="submit">
+        Ingresar
+      </button>
+      <a class="forgot-link" routerLink="/auth/recover-password">¿Olvidaste tu contraseña?</a>
+    </form>
+  </div>
+
+  <!-- Panel derecho: imagen -->
+  <div class="login-image">
+    <div class="overlay">
+      <h1>¡Bienvenido!</h1>
+    </div>
+  </div>
+</div>

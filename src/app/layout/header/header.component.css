@@ -1,0 +1,16 @@
+.app-toolbar {
+  background-color: #1E2A38 !important;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.toggle-button {
+  color: white;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+}

@@ -1,0 +1,106 @@
+<mat-card class="stats-card">
+    <mat-card-title>Estadísticas de la práctica</mat-card-title>
+    <mat-card-content>
+        <p><strong>Intentos realizados:</strong> {{ intentos }}</p>
+        <p><strong>Tiempo promedio por pregunta:</strong> {{ tiempoFormateado }}</p>
+        <p><strong>Mejor resultado:</strong> {{ tiempoFormateado }}</p>
+        <p><strong>Ultimo resultado resultado:</strong> {{ tiempoFormateado }}</p>
+
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="stats-card">
+    <mat-card-title>Últimos exámenes realizados</mat-card-title>
+    <mat-card-content>
+        <div class="tabla-scroll-wrapper" *ngIf="historial.length > 0; else sinRegistros">
+            <table class="historial-table">
+                <thead>
+                    <tr>
+                        <th>Resumen</th>
+                        <th>Fecha</th>
+                        <th>Preguntas</th>
+                        <th>Tiempo Total</th>
+                        <th>N° Aciertos</th>
+                        <th>N° Errores</th>
+                        <th>%</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let intento of historial; trackBy: trackById">
+
+                        <td>{{ formatoFecha(intento.fecha) }}</td>
+                        <td>{{ intento.preguntas }}</td>
+                        <td>{{ tiempoTexto(intento.tiempoTotalSegundos) }}</td>
+                        <td>{{ intento.aciertos }}</td>
+                        <td>{{ intento.errores }}</td>
+                        <td>{{ porcentajeExamen(intento.aciertos, intento.preguntas) }}</td>
+                        <td>
+                            <app-chart-pie  class="grafico-mini" [aciertos]="intento.aciertos" [total]="intento.preguntas"></app-chart-pie>                                
+                        </td>
+                        <td [ngClass]="{'td-style-state-pass': esAprobado(intento.aciertos, intento.preguntas),
+                                    'td-style-state-fail': !esAprobado(intento.aciertos, intento.preguntas)
+                                    }">{{ intento.estado }}</td>
+                        <td>
+                            <button mat-button color="accent" (click)="verDetalle(intento)">
+                                Ver detalle
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <ng-template #sinRegistros>
+            <p style="margin-top: 8px;">No se han registrado intentos todavía.</p>
+        </ng-template>
+    </mat-card-content>
+</mat-card>
+
+<!-- <mat-card class="stats-card">
+    <mat-card-title>Últimos exámenes realizados</mat-card-title>
+    <mat-card-content>
+        <table class="historial-table" *ngIf="historial.length > 0; else sinRegistros">
+            <thead>
+                <tr>
+                    <th>Resumen</th>
+                    <th>Fecha</th>
+                    <th>Preguntas</th>
+                    <th>Tiempo Total</th>
+                    <th>N° Aciertos</th>
+                    <th>N° Errores</th>
+                    <th>%</th>
+                    <th>Estado</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let intento of historial">
+
+                    <td>{{ formatoFecha(intento.fecha) }}</td>
+                    <td>{{ intento.preguntas }}</td>
+                    <td>{{ tiempoTexto(intento.tiempoTotalSegundos) }}</td>
+                    <td>{{ intento.aciertos }}</td>
+                    <td>{{ intento.errores }}</td>
+                    <td>{{ porcentajeExamen(intento.aciertos, intento.preguntas) }}</td>
+                    <td>
+                        <canvas
+                            baseChart
+                            class="grafico-mini"
+                            [type]="'pie'"
+                            [data]="getPieData(intento.aciertos, intento.preguntas)"
+                            [options]="pieChartOptions"
+                        ></canvas>
+                    </td>                    
+                    <td [ngClass]="{'td-style-state-pass': esAprobado(intento.aciertos, intento.preguntas),
+                                    'td-style-state-fail': !esAprobado(intento.aciertos, intento.preguntas)
+                                    }">{{ intento.estado }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <ng-template #sinRegistros>
+            <p style="margin-top: 8px;">No se han registrado intentos todavía.</p>
+        </ng-template>
+    </mat-card-content>
+</mat-card> -->

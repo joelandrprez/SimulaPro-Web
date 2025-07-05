@@ -1,0 +1,15 @@
+.app-container {
+  height: 100vh;
+  background-color: #F4F6F8;
+}
+
+.app-sidenav {
+  width: 220px;
+  background-color: #2C3E50;
+}
+
+.app-content {
+  padding: 24px;
+  background-color: #F4F6F8;
+  min-height: calc(100vh - 64px);
+}

@@ -1,0 +1,13 @@
+<mat-sidenav-container class="app-container">
+  <mat-sidenav #sidenav class="app-sidenav" mode="side" [opened]="isLargeScreen">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-header (toggleSidenav)="sidenav.toggle()"></app-header>
+    <app-breadcrumb></app-breadcrumb>
+    <div class="app-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

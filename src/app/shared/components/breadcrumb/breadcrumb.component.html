@@ -1,0 +1,17 @@
+<nav aria-label="breadcrumb" class="breadcrumb">
+  <ol>
+    <li *ngFor="let crumb of breadcrumbItems; let last = last" [class.active]="last">
+      <ng-container *ngIf="!last">
+        <ng-container *ngIf="crumb.disable; else disabledLink">
+          <a [routerLink]="crumb.url">{{ crumb.label }}</a>
+        </ng-container>
+        <ng-template #disabledLink>
+          <span class="disabled">{{ crumb.label }}</span>
+        </ng-template>
+      </ng-container>
+      <ng-container *ngIf="last">
+        <span>{{ crumb.label }}</span>
+      </ng-container>
+    </li>
+  </ol>
+</nav>

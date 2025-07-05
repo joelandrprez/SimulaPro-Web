@@ -1,0 +1,77 @@
+/* .example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('./../../../../../assets/pmi.jpg');
+  background-size: cover;
+} */
+
+
+
+/* .pmp-card {
+  max-width: 420px;
+  margin: 24px auto;
+  border-radius: 12px;
+}
+
+.pmp-avatar {
+  background-image: url('./../../../../../assets/pmi.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.pmp-image-container {
+  text-align: center;
+  padding: 16px;
+}
+
+.pmp-image-container img {
+  max-width: 200px;
+  height: auto;
+}
+
+.pmp-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}
+
+mat-card-title {
+  font-weight: 600;
+}
+
+mat-card-subtitle {
+  color: #757575;
+} */
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end; /* alinea las cards a la derecha */
+  gap: 16px;
+  padding: 16px;
+}
+
+.pmp-card {
+  flex: 1 1 calc(33.333% - 16px); /* máximo 3 por fila con margen */
+  max-width: 350px;
+  min-width: 280px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 100%;
+  justify-content: end; /* alinea todo a la derecha */
+  gap: 16px;
+  padding: 16px;
+}
+
+.pmp-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}

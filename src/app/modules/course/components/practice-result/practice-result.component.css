@@ -1,0 +1,58 @@
+.resultado-card {
+  max-width: 800px;
+  margin: 16px auto;
+  padding: 20px;
+}
+
+.resultado-card .resumen {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.resultado-card .pregunta {
+  margin-top: 20px;
+}
+
+.resultado-card .pregunta ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resultado-card .pregunta ul li {
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+}
+
+/* ✅ Nuevas clases para estados combinados */
+.correcta-seleccionada {
+  background-color: #d4edda;
+  border-left: 4px solid #28a745;
+  font-weight: bold;
+}
+
+.correcta-no-seleccionada {
+  background-color: #e0f8ea;
+  border-left: 4px solid #3ac37b;
+  font-style: italic;
+}
+
+.incorrecta-seleccionada {
+  background-color: #f8d7da;
+  border-left: 4px solid #dc3545;
+  font-weight: bold;
+}
+
+.explicacion {
+  font-size: 13px;
+  color: #555;
+  margin-top: 4px;
+  padding-left: 8px;
+  border-left: 2px dashed #ccc;
+}

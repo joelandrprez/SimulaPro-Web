@@ -1,0 +1,17 @@
+.detalle-card {
+  margin: 24px;
+  padding: 16px;
+}
+
+.modo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.modo-card {
+  flex: 1 1 calc(33.333% - 16px);
+  min-width: 260px;
+}

@@ -1,0 +1,51 @@
+<mat-card class="detalle-card">
+  <mat-card-title>Simulador PMP</mat-card-title>
+  <mat-card-subtitle>Elige un modo para comenzar</mat-card-subtitle>
+
+  <div class="modo-grid">
+    <!-- MODO ESTUDIO -->
+    <mat-card class="modo-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar color="primary">menu_book</mat-icon>
+        <mat-card-title>Modo Estudio</mat-card-title>
+        <mat-card-subtitle>Aprende a tu ritmo</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Revisa preguntas con explicación inmediata, filtradas por dominio o categoría. Ideal para reforzar conceptos.</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="MoveMode('study')">Iniciar</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- MODO PRÁCTICA -->
+    <mat-card class="modo-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar color="accent">psychology</mat-icon>
+        <mat-card-title>Modo Práctica</mat-card-title>
+        <mat-card-subtitle>Entrena sin presión</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Responde preguntas aleatorias sin límite de tiempo. Ideal para afianzar habilidades antes del examen real.</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="accent" (click)="MoveMode('practic-stats')">Practicar</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- MODO EXAMEN -->
+    <mat-card class="modo-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar color="warn">timer</mat-icon>
+        <mat-card-title>Modo Examen</mat-card-title>
+        <mat-card-subtitle>Simula el examen real</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Realiza un examen completo cronometrado con condiciones reales. Ideal para medir tu preparación final.</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="warn" (click)="MoveMode('examen')">Simular</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</mat-card>

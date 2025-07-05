@@ -1,0 +1,39 @@
+<mat-card class="resultado-card">
+  <mat-card-title>Resultado del Modo Práctica</mat-card-title>
+  <mat-card-content>
+    <div class="resumen">
+      <p><strong>Total:</strong> {{ resultadoPracticaMock.totalPreguntas }}</p>
+      <p><strong>Aciertos:</strong> {{ resultadoPracticaMock.aciertos }}</p>
+      <p><strong>Errores:</strong> {{ resultadoPracticaMock.totalPreguntas - resultadoPracticaMock.aciertos }}</p>
+      <p><strong>Porcentaje:</strong> {{ resultadoPracticaMock.porcentaje }}%</p>
+      <p><strong>Tiempo:</strong> {{ resultadoPracticaMock.tiempoTexto }}</p>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="pregunta" *ngFor="let pregunta of resultadoPracticaMock.preguntas; let i = index">
+      <h4>Pregunta {{ i + 1 }}</h4>
+      <p>{{ pregunta.texto }}</p>
+      <ul>
+        <li *ngFor="let opcion of pregunta.opciones; let j = index" [ngClass]="{
+          'correcta-seleccionada': opcion.correcta && pregunta.seleccionadas.includes(j),
+          'correcta-no-seleccionada': opcion.correcta && !pregunta.seleccionadas.includes(j),
+          'incorrecta-seleccionada': !opcion.correcta && pregunta.seleccionadas.includes(j)
+        }">
+          {{ opcion.texto }}
+
+        </li>
+
+          <div class="explicacion">
+            {{ pregunta.explicacion }}
+          </div>        
+
+      </ul>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" routerLink="/courses/list">Volver</button>
+    <button mat-stroked-button color="accent" routerLink="/courses">Practicar otra vez</button>
+  </mat-card-actions>
+</mat-card>

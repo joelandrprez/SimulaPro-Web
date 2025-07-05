@@ -1,0 +1,48 @@
+<app-practice-stats
+  [intentos]="3"
+  [tiempoPromedio]="92"
+  [aciertos]="18"
+  [total]="25"
+></app-practice-stats>
+
+
+<mat-card class="pregunta-card">
+  <mat-card-title>Pregunta del Simulador</mat-card-title>
+  <mat-card-content>
+
+    <!-- Pregunta larga en párrafos -->
+    <div class="pregunta-texto">
+      <p>
+        El gerente de proyecto está en la etapa de monitoreo y control. El cliente ha solicitado un cambio
+        importante que afectará tanto el cronograma como el presupuesto. El cambio también requiere aprobación
+        del comité directivo.
+      </p>
+      <p>
+        Durante la reunión con el equipo, se debate si el cambio debe ejecutarse de inmediato, ya que consideran
+        que el cliente es prioridad, o si se debe seguir el proceso de control de cambios.
+      </p>
+      <p>
+        El gerente de proyecto desea asegurar que el procedimiento adecuado sea seguido.
+      </p>
+      <p>
+        ¿Cuál es la mejor acción a tomar en esta situación?
+      </p>
+    </div>
+
+    <!-- Opciones múltiples -->
+    <form [formGroup]="form">
+      <div formArrayName="respuestas">
+        <div *ngFor="let opcion of opciones; let i = index">
+          <mat-checkbox [formControlName]="i">{{ opcion }}</mat-checkbox>
+        </div>
+      </div>
+    </form>
+
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="enviarRespuesta()">
+      Enviar Respuesta
+    </button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,46 @@
+<!-- <mat-card class="pmp-card" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar class="pmp-avatar"></div>
+    <mat-card-title>Simulador PMP</mat-card-title>
+    <mat-card-subtitle>Prueba tu preparación con exámenes reales</mat-card-subtitle>
+  </mat-card-header>
+
+  <div class="pmp-image-container">
+    <img mat-card-image src="./../../../../../assets/pmp.webp" alt="Simulador PMP en acción" />
+  </div>
+
+  <mat-card-content>
+    <p>
+      Accede a un simulador inteligente con más de <strong>900 preguntas reales</strong> del examen PMP.
+      Practica por dominios, simula exámenes cronometrados y mejora tu puntaje con estadísticas detalladas.
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions class="pmp-actions">
+    <button mat-raised-button color="primary">
+      <mat-icon>play_arrow</mat-icon> Ingresar
+    </button>
+  </mat-card-actions>
+</mat-card> -->
+
+<div class="card-container">
+  <mat-card class="pmp-card" *ngFor="let item of simuladores">
+    <!-- contenido del card -->
+    <mat-card-header>
+      <mat-card-title>{{ item.titulo }}</mat-card-title>
+      <mat-card-subtitle>{{ item.subtitulo }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <img mat-card-image [src]="item.imagen" alt="imagen simulador" />
+
+    <mat-card-content>
+      <p>{{ item.descripcion }}</p>
+    </mat-card-content>
+
+    <mat-card-actions class="pmp-actions">
+      <button mat-raised-button color="primary" (click)="OpenDetailCourse(item.courseId)">
+        <mat-icon>play_arrow</mat-icon> Ingresar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
