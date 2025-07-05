@@ -18,6 +18,45 @@
 ---
 
 ## 📁 Estructura del Proyecto (resumen)
+## 📁 Estructura del Proyecto
+
+```plaintext
+SIMULAPROFRONTEND/
+│
+├── .angular/               # Configuración interna de Angular CLI
+├── .vscode/                # Configuraciones del editor VSCode
+├── node_modules/           # Dependencias del proyecto
+│
+├── src/                    # Código fuente principal
+│   ├── app/                # Lógica principal de la aplicación
+│   │   ├── guards/         # Protección de rutas (AuthGuard, etc.)
+│   │   ├── layout/         # Componentes estructurales (header, footer)
+│   │   ├── modules/        # Módulos funcionales (simulador, cursos, etc.)
+│   │   ├── shared/         # Componentes y servicios reutilizables
+│   │   ├── app-routing.module.ts  # Definición de rutas principales
+│   │   ├── app.component.css      # Estilos del componente principal
+│   │   ├── app.component.html     # Plantilla principal
+│   │   ├── app.component.spec.ts  # Pruebas unitarias del componente principal
+│   │   ├── app.component.ts       # Lógica del componente principal
+│   │   └── app.module.ts          # Módulo raíz de la app
+│   │
+│   ├── assets/             # Recursos estáticos como imágenes
+│   │   ├── .gitkeep
+│   │   ├── pmij.jpg
+│   │   └── pmp.webp
+│   │
+│   ├── environments/       # Configuraciones por entorno (dev, prod)
+│   ├── favicon.ico         # Ícono de la app
+│   ├── index.html          # HTML principal de la aplicación
+│   ├── main.ts             # Punto de entrada principal de Angular
+│   └── styles.css          # Estilos globales
+│
+├── .editorconfig           # Reglas de formato de código
+├── .gitignore              # Archivos/carpetas ignorados por Git
+├── angular.json            # Configuración general de Angular
+├── package.json            # Dependencias y scripts del proyecto
+├── package-lock.json       # Detalles de versiones de dependencias
+└── README.md               # Este archivo
 
 ## ⚙️ Scripts disponibles
 
